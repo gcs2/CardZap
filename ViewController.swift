@@ -39,6 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func textFieldPrimaryActionTriggered(_ sender: Any) {
         deckName = textField.text!
         print(deckName)
+        performSegue(withIdentifier: "newDeckSegue", sender: self)
     }
     
     

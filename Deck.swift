@@ -9,8 +9,12 @@
 import Foundation
 
 class Deck<Front: Hashable,Back> {
-    var theDeck = Dictionary<Front, Back>()
+    var theDeck: Dictionary<Front, Back>
     var name: String = ""
+    
+    init() {
+        theDeck = Dictionary<Front, Back>()
+    }
     
     func add(front key: Front,back value: Back) {
         theDeck[key] = value
