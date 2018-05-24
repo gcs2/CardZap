@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Collection View Controller-->
+        <scene sceneID="pYk-TW-5zm">
+            <objects>
+                <collectionViewController id="sBo-FP-7GP" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4ig-YQ-jMe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hdr-jM-G05">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ys0-dk-tam">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                                <size key="customSize" width="130" height="130"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="sBo-FP-7GP" id="19k-ra-35A"/>
+                            <outlet property="delegate" destination="sBo-FP-7GP" id="Jk5-hi-RW1"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDL-3b-xDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="-526"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CardZap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-wB-sia">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Decks" id="IrM-eS-g2E">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hX3-CS-quA">
+                                            <connections>
+                                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="dDo-gW-y0R"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyT-29-13E">
+                                <rect key="frame" x="0.0" y="64" width="320" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New deck name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ua6-Oh-qeR">
+                                        <rect key="frame" x="8" y="6" width="304" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nameView" destination="zyT-29-13E" id="qyo-Lc-Irl"/>
+                        <outlet property="navBar" destination="Phe-wB-sia" id="bTC-Aa-gao"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.5" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7zf-3K-mP8">
+            <objects>
+                <viewController id="7ko-0n-C1c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GaI-Xy-WXC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuH-50-zG4">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Build a New Deck" id="2IT-5x-Rlg"/>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIX-w9-90a">
+                                <rect key="frame" x="0.0" y="64" width="320" height="1186"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qz1-bF-u8r">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1250"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1250" id="Pyy-b9-Xwq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qz1-bF-u8r" firstAttribute="leading" secondItem="TIX-w9-90a" secondAttribute="leading" id="LL2-ya-ZYg"/>
+                                    <constraint firstAttribute="trailing" secondItem="qz1-bF-u8r" secondAttribute="trailing" id="T7B-3g-sWB"/>
+                                    <constraint firstAttribute="bottom" secondItem="qz1-bF-u8r" secondAttribute="bottom" id="UZY-zD-mSn"/>
+                                    <constraint firstItem="qz1-bF-u8r" firstAttribute="top" secondItem="TIX-w9-90a" secondAttribute="top" id="tDh-WE-zS8"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="top" secondItem="XuH-50-zG4" secondAttribute="bottom" id="37p-lK-bs5"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="leading" secondItem="jNm-k5-GXd" secondAttribute="leading" id="BqE-8h-Ams"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="bottom" secondItem="jNm-k5-GXd" secondAttribute="bottom" id="Cqg-YV-lma"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="bottom" secondItem="jNm-k5-GXd" secondAttribute="bottom" id="IvE-3S-Mny"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="trailing" secondItem="jNm-k5-GXd" secondAttribute="trailing" id="KaK-Gm-Rag"/>
+                            <constraint firstItem="XuH-50-zG4" firstAttribute="trailing" secondItem="jNm-k5-GXd" secondAttribute="trailing" id="Kpd-hl-U6m"/>
+                            <constraint firstItem="qz1-bF-u8r" firstAttribute="width" secondItem="GaI-Xy-WXC" secondAttribute="width" id="LhB-oO-ABk"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="leading" secondItem="jNm-k5-GXd" secondAttribute="leading" id="PGt-aB-Fyf"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="trailing" secondItem="jNm-k5-GXd" secondAttribute="trailing" id="Rvj-Me-rgK"/>
+                            <constraint firstItem="XuH-50-zG4" firstAttribute="leading" secondItem="jNm-k5-GXd" secondAttribute="leading" id="SDp-xY-xx3"/>
+                            <constraint firstItem="XuH-50-zG4" firstAttribute="top" secondItem="jNm-k5-GXd" secondAttribute="top" id="THG-Hd-tlK"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="trailing" secondItem="jNm-k5-GXd" secondAttribute="trailing" id="ZbX-ak-L6H"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="leading" secondItem="jNm-k5-GXd" secondAttribute="leading" id="bbR-Du-0Wc"/>
+                            <constraint firstItem="TIX-w9-90a" firstAttribute="top" secondItem="XuH-50-zG4" secondAttribute="bottom" id="xoq-rl-IRw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jNm-k5-GXd"/>
+                    </view>
+                    <size key="freeformSize" width="320" height="1250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y5d-3d-HOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="132.5"/>
+        </scene>
+    </scenes>
+</document>
