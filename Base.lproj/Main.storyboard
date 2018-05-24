@@ -53,47 +53,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-wB-sia">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Decks" id="IrM-eS-g2E">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hX3-CS-quA">
-                                            <connections>
-                                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="dDo-gW-y0R"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyT-29-13E">
-                                <rect key="frame" x="0.0" y="64" width="320" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VH0-Wt-PS9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New deck name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ua6-Oh-qeR">
-                                        <rect key="frame" x="8" y="6" width="304" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-wB-sia">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <items>
+                                            <navigationItem title="Decks" id="IrM-eS-g2E">
+                                                <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hX3-CS-quA">
+                                                    <connections>
+                                                        <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="dDo-gW-y0R"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7EN-P0-JGu">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <view key="tableFooterView" contentMode="scaleToFill" id="wCz-hT-QsV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New deck name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mon-Hz-fxA">
+                                                    <rect key="frame" x="7" y="7" width="306" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textFieldPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Cl2-aB-aa3"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Mon-Hz-fxA" firstAttribute="top" secondItem="wCz-hT-QsV" secondAttribute="top" constant="7" id="2jD-2m-4Gs"/>
+                                                <constraint firstItem="Mon-Hz-fxA" firstAttribute="leading" secondItem="wCz-hT-QsV" secondAttribute="leading" constant="7" id="Ncn-DA-eG2"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mon-Hz-fxA" secondAttribute="bottom" constant="7" id="VcF-Pa-oTv"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mon-Hz-fxA" secondAttribute="trailing" constant="7" id="wYB-5v-Lw6"/>
+                                            </constraints>
+                                        </view>
+                                    </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VH0-Wt-PS9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BUf-fe-hie"/>
+                            <constraint firstItem="VH0-Wt-PS9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ube-Zu-34G"/>
+                            <constraint firstItem="VH0-Wt-PS9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mEf-Pt-KRD"/>
+                            <constraint firstAttribute="bottom" secondItem="VH0-Wt-PS9" secondAttribute="bottom" id="nYu-Rj-P9g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="nameView" destination="zyT-29-13E" id="qyo-Lc-Irl"/>
+                        <outlet property="nameView" destination="wCz-hT-QsV" id="ZBE-s1-mZS"/>
                         <outlet property="navBar" destination="Phe-wB-sia" id="bTC-Aa-gao"/>
+                        <outlet property="textField" destination="Mon-Hz-fxA" id="cCv-EW-H35"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82.5" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yC1-pm-4ql">
+            <objects>
+                <viewController id="D4q-yo-HWn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vn9-cl-fQA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCi-7V-f6O">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Decks" id="wKn-Bf-bNT">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="xCi-ew-Rrb">
+                                            <connections>
+                                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="GvS-Lc-w3T"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="e0d-Ld-6Vw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ea6-qe-jbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="253"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7zf-3K-mP8">
@@ -151,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5d-3d-HOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="132.5"/>
+            <point key="canvasLocation" x="-752" y="-276"/>
         </scene>
     </scenes>
 </document>
