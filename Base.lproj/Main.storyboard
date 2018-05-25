@@ -60,6 +60,7 @@
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-wB-sia">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="barTintColor" red="0.91764705882352937" green="0.8666666666666667" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Decks" id="IrM-eS-g2E">
                                                 <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hX3-CS-quA">
@@ -74,12 +75,14 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7EN-P0-JGu">
                                         <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="separatorColor" red="0.93333333330000001" green="0.90196078430000004" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.96274755059999995" green="0.93938795620000004" blue="0.8693091731" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <view key="tableFooterView" contentMode="scaleToFill" id="wCz-hT-QsV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New deck name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mon-Hz-fxA">
-                                                    <rect key="frame" x="7" y="7" width="306" height="30"/>
+                                                    <rect key="frame" x="7" y="7" width="361" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -91,7 +94,7 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Mon-Hz-fxA" firstAttribute="top" secondItem="wCz-hT-QsV" secondAttribute="top" constant="7" id="2jD-2m-4Gs"/>
                                                 <constraint firstItem="Mon-Hz-fxA" firstAttribute="leading" secondItem="wCz-hT-QsV" secondAttribute="leading" constant="7" id="Ncn-DA-eG2"/>
@@ -103,7 +106,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VH0-Wt-PS9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BUf-fe-hie"/>
                             <constraint firstItem="VH0-Wt-PS9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ube-Zu-34G"/>
@@ -138,6 +141,7 @@
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCi-7V-f6O">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="barTintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="?" id="wKn-Bf-bNT">
                                                 <barButtonItem key="leftBarButtonItem" style="plain" systemItem="stop" id="8J2-FU-Kx3">
@@ -154,9 +158,10 @@
                                     </navigationBar>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-oE-wDZ">
                                         <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.90196078431372551" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </scrollView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.96274755059999995" green="0.93938795620000004" blue="0.8693091731" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9R-fj-iWC">
                                 <rect key="frame" x="0.0" y="80" width="375" height="567"/>
@@ -217,7 +222,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="rxK-vI-2Lp" firstAttribute="leading" secondItem="q9R-fj-iWC" secondAttribute="leading" constant="40" id="9kR-9z-m4d"/>
                                     <constraint firstAttribute="trailing" secondItem="rxK-vI-2Lp" secondAttribute="trailing" constant="40" id="TTq-rL-8W2"/>
@@ -227,7 +231,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q9R-fj-iWC" firstAttribute="top" secondItem="e0d-Ld-6Vw" secondAttribute="top" constant="60" id="65D-I7-JGK"/>
                             <constraint firstItem="e0d-Ld-6Vw" firstAttribute="bottom" secondItem="q9R-fj-iWC" secondAttribute="bottom" constant="20" id="F5j-lg-caW"/>
@@ -245,6 +249,7 @@
                         <outlet property="backTextView" destination="Kii-I5-UiF" id="s2I-Am-K5B"/>
                         <outlet property="frontTextView" destination="tUa-qa-X3Z" id="zuF-sE-SF6"/>
                         <outlet property="navBar" destination="uCi-7V-f6O" id="axW-g6-Dgf"/>
+                        <outlet property="stackView" destination="q9R-fj-iWC" id="Ef2-ws-8hN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ea6-qe-jbi" userLabel="First Responder" sceneMemberID="firstResponder"/>

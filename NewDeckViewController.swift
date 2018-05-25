@@ -22,7 +22,7 @@ class NewDeckViewController: UIViewController {
         super.viewDidLoad()
         navBar.topItem?.title = deckTitle
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapHandler(gesture:)))
-        //stackView.addGestureRecognizer(tap)
+        stackView.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     @objc func tapHandler(gesture: UITapGestureRecognizer) {
@@ -40,7 +40,16 @@ class NewDeckViewController: UIViewController {
     }
 
     @IBAction func addCardButtonPressed(_ sender: Any) {
-        
+        if(!(frontTextView.text! == "")) {
+            if(!(backTextView.text! == "")) {
+                var front = frontTextView.text!
+                var back = backTextView.text!
+                theDeck.add(front: front, back: back)
+                frontTextView.text = ""
+                backTextView.text = ""
+                
+            }
+        }
     }
     
     /*

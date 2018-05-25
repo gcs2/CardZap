@@ -18,5 +18,11 @@ class Deck<Front: Hashable,Back> {
     
     func add(front key: Front,back value: Back) {
         theDeck[key] = value
+        print("added a card")
+        print(theDeck.count)
+    }
+    
+    func size() -> Int {
+        return theDeck.count
     }
 }
