@@ -10,10 +10,15 @@ import Foundation
 
 class Deck<Front: Hashable,Back> {
     var theDeck: Dictionary<Front, Back>
-    var name: String = ""
+    var name: String
+    var theSchedule: Dictionary<Front, Int>
+    var todaysCards: Queue<Front>
     
     init() {
         theDeck = Dictionary<Front, Back>()
+        name = ""
+        theSchedule = Dictionary<Front, Int>()
+        todaysCards = Queue<Front>()
     }
     
     func add(front key: Front,back value: Back) {
@@ -25,4 +30,12 @@ class Deck<Front: Hashable,Back> {
     func size() -> Int {
         return theDeck.count
     }
+    
+    func loadTodaysCards() {
+        print("loading...")
+        for (key, value) in theDeck {
+            todaysCards.enqueue(key)
+        }
+    }
+    
 }
