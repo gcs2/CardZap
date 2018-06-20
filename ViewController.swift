@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print(deckCollection.count)
         nameView.isHidden = true
     }
     

@@ -69,6 +69,7 @@ class NewDeckViewController: UIViewController {
             print(currentValue)
         }
         deckCollection.append(theDeck)
+        print(deckCollection.count)
         
     }
     /*

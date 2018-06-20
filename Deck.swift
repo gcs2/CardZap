@@ -13,12 +13,14 @@ class Deck<Front: Hashable,Back> {
     var name: String
     var theSchedule: Dictionary<Front, Int>
     var todaysCards: Queue<Front>
+    var dateCreated: Date
     
     init() {
         theDeck = Dictionary<Front, Back>()
         name = ""
         theSchedule = Dictionary<Front, Int>()
         todaysCards = Queue<Front>()
+        dateCreated = Date()
     }
     
     func add(front key: Front,back value: Back) {
