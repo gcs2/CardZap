@@ -8,9 +8,9 @@
 
 import UIKit
 
+var theDeck = Deck<AnyHashable, Any>()
+
 class NewDeckViewController: UIViewController {
-    
-    var theDeck = Deck<AnyHashable, Any>()
     
     let deckTitle = deckName
     @IBOutlet weak var navBar: UINavigationBar!
@@ -55,6 +55,7 @@ class NewDeckViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         var index = 0
+        //addCardButtonPressed((Any).self)
         for (key,value) in theDeck.theDeck {
             print(String(index))
             print(key)
@@ -62,14 +63,15 @@ class NewDeckViewController: UIViewController {
             index += 1
         }
         theDeck.loadTodaysCards()
-        while !theDeck.todaysCards.isEmpty() {
+        /* while !theDeck.todaysCards.isEmpty() {
             let currentKey = theDeck.todaysCards.dequeue()
             let currentValue = theDeck.theDeck[currentKey!]!
             print(currentKey!)
             print(currentValue)
-        }
+        } */
         deckCollection.append(theDeck)
         print(deckCollection.count)
+        performSegue(withIdentifier: "toPractice", sender: nil)
         
     }
     /*

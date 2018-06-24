@@ -28,7 +28,6 @@
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-wB-sia">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <color key="barTintColor" red="0.91764705882352937" green="0.8666666666666667" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Decks" id="IrM-eS-g2E">
                                                 <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hX3-CS-quA">
@@ -62,7 +61,6 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Mon-Hz-fxA" firstAttribute="top" secondItem="wCz-hT-QsV" secondAttribute="top" constant="7" id="2jD-2m-4Gs"/>
                                                 <constraint firstItem="Mon-Hz-fxA" firstAttribute="leading" secondItem="wCz-hT-QsV" secondAttribute="leading" constant="7" id="Ncn-DA-eG2"/>
@@ -74,7 +72,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VH0-Wt-PS9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BUf-fe-hie"/>
                             <constraint firstItem="VH0-Wt-PS9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ube-Zu-34G"/>
@@ -124,7 +121,6 @@
                                                 <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="tyd-0T-diT">
                                                     <connections>
                                                         <action selector="doneButtonPressed:" destination="D4q-yo-HWn" id="YS9-cS-lIw"/>
-                                                        <segue destination="uK4-0L-vbZ" kind="show" id="Uu6-06-nhX"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -220,6 +216,7 @@
                         <outlet property="frontTextView" destination="tUa-qa-X3Z" id="zuF-sE-SF6"/>
                         <outlet property="navBar" destination="uCi-7V-f6O" id="axW-g6-Dgf"/>
                         <outlet property="stackView" destination="q9R-fj-iWC" id="Ef2-ws-8hN"/>
+                        <segue destination="uK4-0L-vbZ" kind="show" identifier="toPractice" id="THO-oq-fDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ea6-qe-jbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,10 +281,11 @@
             </objects>
             <point key="canvasLocation" x="-752" y="-276"/>
         </scene>
-        <!--View Controller-->
+        <!--Practice Controller-->
         <scene sceneID="uAx-he-6l8">
             <objects>
-                <viewController id="uK4-0L-vbZ" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oWe-g2-uTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="uK4-0L-vbZ" customClass="PracticeController" customModule="CardZap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qJN-Xk-dgI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,16 +325,36 @@
                                     </stackView>
                                     <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="QuR-N3-O3y">
                                         <rect key="frame" x="0.0" y="25" width="315" height="180"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6c-KC-dCb">
+                                                <rect key="frame" x="137" y="80" width="40.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.4322731257880339" green="0.51450450287132232" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstItem="r6c-KC-dCb" firstAttribute="centerX" secondItem="QuR-N3-O3y" secondAttribute="centerX" id="DEg-At-ohb"/>
+                                            <constraint firstItem="r6c-KC-dCb" firstAttribute="centerY" secondItem="QuR-N3-O3y" secondAttribute="centerY" id="YLY-NQ-x3b"/>
                                             <constraint firstAttribute="width" secondItem="QuR-N3-O3y" secondAttribute="height" multiplier="7:4" id="aJ9-73-3Vu"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZf-9v-AA3">
                                         <rect key="frame" x="0.0" y="205" width="315" height="179.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBm-ez-kMi">
+                                                <rect key="frame" x="138" y="80" width="38" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.99227696106500995" green="1" blue="0.31981369156063455" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eZf-9v-AA3" secondAttribute="height" multiplier="7:4" id="Ha3-7G-miY"/>
+                                            <constraint firstItem="IBm-ez-kMi" firstAttribute="centerY" secondItem="eZf-9v-AA3" secondAttribute="centerY" id="MG7-aR-HhS"/>
+                                            <constraint firstItem="IBm-ez-kMi" firstAttribute="centerX" secondItem="eZf-9v-AA3" secondAttribute="centerX" id="kvr-Yp-Rt8"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="lastBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="S6c-h1-ubE">
@@ -345,14 +363,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6B-qQ-oWp">
                                                 <rect key="frame" x="0.0" y="0.0" width="93.5" height="30"/>
                                                 <state key="normal" title="Wrong"/>
+                                                <connections>
+                                                    <action selector="gotWrongPressed:" destination="uK4-0L-vbZ" eventType="touchUpInside" id="bGe-tL-yez"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-nO-Vc8">
                                                 <rect key="frame" x="93.5" y="0.0" width="102" height="30"/>
                                                 <state key="normal" title="Check-"/>
+                                                <connections>
+                                                    <action selector="checkMinusPressed:" destination="uK4-0L-vbZ" eventType="touchUpInside" id="P9L-H2-JBo"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v40-xV-Jaq">
                                                 <rect key="frame" x="195.5" y="0.0" width="89.5" height="30"/>
                                                 <state key="normal" title="Check"/>
+                                                <connections>
+                                                    <action selector="checkPressed:" destination="uK4-0L-vbZ" eventType="touchUpInside" id="3k3-WP-w1W"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -394,8 +421,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cdo-i5-AOj"/>
                     </view>
+                    <connections>
+                        <outlet property="backLabel" destination="IBm-ez-kMi" id="uWj-De-0ie"/>
+                        <outlet property="frontLabel" destination="r6c-KC-dCb" id="H4E-bu-JAu"/>
+                        <outlet property="navBar" destination="ggW-b4-9Yf" id="jxT-Lt-aJU"/>
+                        <outlet property="remainingLabel" destination="MVc-Gy-d1l" id="fQM-IQ-zEG"/>
+                        <outlet property="tabBar" destination="6nG-LB-8Si" id="Qz0-l7-9Ym"/>
+                        <outlet property="totalLabel" destination="We6-TD-n7m" id="Y9E-zm-42L"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oWe-g2-uTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1841.25" y="250"/>
         </scene>

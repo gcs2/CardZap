@@ -29,15 +29,23 @@ class Deck<Front: Hashable,Back> {
         print(theDeck.count)
     }
     
+    func get(front key: Front) -> Back? {
+        return theDeck[key]
+    }
+    
     func size() -> Int {
         return theDeck.count
     }
     
     func loadTodaysCards() {
         print("loading...")
-        for (key, value) in theDeck {
+        for (key, _) in theDeck {
             todaysCards.enqueue(key)
         }
+    }
+    
+    func getTodaysCards() -> Queue<Front>? {
+        return todaysCards
     }
     
 }
