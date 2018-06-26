@@ -34,4 +34,8 @@ struct Queue<E> {
     func isEmpty() -> Bool {
         return array.isEmpty
     }
+    
+    func size() -> Int {
+        return array.count
+    }
 }

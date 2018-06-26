@@ -8,10 +8,11 @@
 
 import UIKit
 
-var todaysCards = Queue<AnyHashable>()
-
 class PracticeController: UIViewController {
     
+    let deckTitle = deckName
+    var currentKey = theDeck.unseenCards.get()
+    var DOA = false
     
     @IBOutlet weak var remainingLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
@@ -22,12 +23,32 @@ class PracticeController: UIViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tabBar: UITabBar!
     
+    @IBOutlet weak var wrongButton: UIButton!
+    @IBOutlet weak var checkMinusButton: UIButton!
+    @IBOutlet weak var checkButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        todaysCards = theDeck.getTodaysCards()!
-        let currentKey = theDeck.todaysCards.dequeue()
+        
+        tabBar.selectedItem = tabBar.items![0]
+        navBar.topItem?.title = deckTitle
+        backLabel.isHidden = true
+        totalLabel.text = String(theDeck.unseenCards.size() + theDeck.missedCards.size()) + " unlearned"
+        remainingLabel.text = String(theDeck.todaysCards.size()) + " scheduled"
+        
         frontLabel.text = currentKey as? String
         backLabel.text = theDeck.get(front: currentKey!) as? String
+        
+        wrongButton.isEnabled = false
+        checkMinusButton.isEnabled = false
+        checkButton.isEnabled = false
+        
+        if(theDeck.todaysCards.size() == 0) {
+            DOA = true
+            print("dead on arrival")
+        }
+        nextCard()
         
         // Do any additional setup after loading the view.
     }
@@ -36,25 +57,68 @@ class PracticeController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func showBack(_ sender: Any) {
+        if(backLabel.isHidden) {
+            backLabel.isHidden = false
+            wrongButton.isEnabled = true;
+            checkMinusButton.isEnabled = true;
+            checkButton.isEnabled = true;
+        }
+    }
     
     @IBAction func gotWrongPressed(_ sender: Any) {
-        
-        
-        
+        if(DOA) {
+            theDeck.unseenCards.enqueue(currentKey!)
+        } else {
+            theDeck.missedCards.enqueue(currentKey!)
+        }
+        nextCard()
     }
     
     @IBAction func checkMinusPressed(_ sender: Any) {
-        
-        
-        
+        //theDeck.schedule[1].enqueue(currentKey!)
+        nextCard()
     }
     
     @IBAction func checkPressed(_ sender: Any) {
-        
-        
-        
+        //theDeck.schedule[3].enqueue(currentKey!)
+        nextCard()
     }
     
+    func nextCard() {
+        if(theDeck.unseenCards.size() == 0) {
+            theDeck.loadUnseenCards()
+            nextCard()
+        } else {
+            
+            remainingLabel.text = String(theDeck.todaysCards.size()) + " scheduled"
+            totalLabel.text = String(theDeck.unseenCards.size() + theDeck.missedCards.size()) + " unlearned"
+            
+            printUsefulInformation()
+            
+            if(theDeck.todaysCards.size() > 0) {
+                currentKey = theDeck.todaysCards.dequeue()
+            } else if(theDeck.missedCards.size() > 0) {
+                currentKey = theDeck.missedCards.dequeue()
+            } else if(theDeck.unseenCards.size() > 0) {
+                currentKey = theDeck.unseenCards.dequeue()
+            }
+            
+            frontLabel.text = currentKey as? String
+            backLabel.text = theDeck.get(front: currentKey!) as? String
+            backLabel.isHidden = true
+            
+            wrongButton.isEnabled = false
+            checkMinusButton.isEnabled = false
+            checkButton.isEnabled = false
+        }
+    }
+    
+    func printUsefulInformation()  {
+        print("unseenSize: " + String(theDeck.unseenCards.size()))
+        print("missedSize: " + String(theDeck.missedCards.size()))
+        print("todaysSize: " + String(theDeck.todaysCards.size()))
+    }
     
     /*
     // MARK: - Navigation

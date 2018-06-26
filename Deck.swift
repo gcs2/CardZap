@@ -13,14 +13,20 @@ class Deck<Front: Hashable,Back> {
     var name: String
     var theSchedule: Dictionary<Front, Int>
     var todaysCards: Queue<Front>
+    var unseenCards: Queue<Front>
+    var missedCards: Queue<Front>
     var dateCreated: Date
+    var schedule: [Queue<Front>]
     
     init() {
         theDeck = Dictionary<Front, Back>()
         name = ""
         theSchedule = Dictionary<Front, Int>()
-        todaysCards = Queue<Front>()
         dateCreated = Date()
+        todaysCards = Queue<Front>()
+        missedCards = Queue<Front>()
+        unseenCards = Queue<Front>()
+        schedule = [Queue<Front>]()
     }
     
     func add(front key: Front,back value: Back) {
@@ -37,15 +43,24 @@ class Deck<Front: Hashable,Back> {
         return theDeck.count
     }
     
-    func loadTodaysCards() {
+    func loadUnseenCards() {
         print("loading...")
         for (key, _) in theDeck {
-            todaysCards.enqueue(key)
+            unseenCards.enqueue(key)
+            print("unseenCardsSize: " + String(unseenCards.size()) + " for " + (key as? String)!)
         }
     }
     
     func getTodaysCards() -> Queue<Front>? {
         return todaysCards
+    }
+    
+    func getUnseenCards() -> Queue<Front>? {
+        return unseenCards
+    }
+    
+    func getMissedCards() -> Queue<Front>? {
+        return missedCards
     }
     
 }

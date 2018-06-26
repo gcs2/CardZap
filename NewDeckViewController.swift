@@ -48,7 +48,6 @@ class NewDeckViewController: UIViewController {
                 theDeck.add(front: front, back: back)
                 frontTextView.text = ""
                 backTextView.text = ""
-                
             }
         }
     }
@@ -62,7 +61,7 @@ class NewDeckViewController: UIViewController {
             print(value)
             index += 1
         }
-        theDeck.loadTodaysCards()
+        theDeck.loadUnseenCards()
         /* while !theDeck.todaysCards.isEmpty() {
             let currentKey = theDeck.todaysCards.dequeue()
             let currentValue = theDeck.theDeck[currentKey!]!
