@@ -9,7 +9,7 @@
 
 import UIKit
 
-var deckCollection = [Deck<AnyHashable, Any>]()
+var deckCollection = [Deck<Card<String>, Card<String>>]()
 var deckName = ""
 
 class ViewController: UIViewController, UITextFieldDelegate {

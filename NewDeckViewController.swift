@@ -8,7 +8,7 @@
 
 import UIKit
 
-var theDeck = Deck<AnyHashable, Any>()
+var theDeck = Deck<Card<String>, Card<String>>()
 
 class NewDeckViewController: UIViewController {
     
@@ -43,9 +43,9 @@ class NewDeckViewController: UIViewController {
     @IBAction func addCardButtonPressed(_ sender: Any) {
         if(!(frontTextView.text! == "")) {
             if(!(backTextView.text! == "")) {
-                let front = frontTextView.text!
-                let back = backTextView.text!
-                theDeck.add(front: front, back: back)
+                let frontCard = Card(frontTextView.text!)
+                let backCard = Card(backTextView.text!)
+                theDeck.add(front: frontCard, back: backCard)
                 frontTextView.text = ""
                 backTextView.text = ""
             }
@@ -56,9 +56,11 @@ class NewDeckViewController: UIViewController {
         var index = 0
         //addCardButtonPressed((Any).self)
         for (key,value) in theDeck.theDeck {
+            let keyText = key.theContent
+            let valText = value.theContent
             print(String(index))
-            print(key)
-            print(value)
+            print(keyText)
+            print(valText)
             index += 1
         }
         theDeck.loadUnseenCards()

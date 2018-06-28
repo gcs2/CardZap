@@ -37,8 +37,14 @@ class PracticeController: UIViewController {
         totalLabel.text = String(theDeck.unseenCards.size() + theDeck.missedCards.size()) + " unlearned"
         remainingLabel.text = String(theDeck.todaysCards.size()) + " scheduled"
         
-        frontLabel.text = currentKey as? String
-        backLabel.text = theDeck.get(front: currentKey!) as? String
+        let frontText = currentKey!.theContent
+        let backText = theDeck.get(front: currentKey!)!.theContent
+        
+        print("frontText: " + frontText)
+        print("backText: " + backText)
+        
+        frontLabel.text = frontText
+        backLabel.text = backText
         
         wrongButton.isEnabled = false
         checkMinusButton.isEnabled = false
@@ -104,8 +110,11 @@ class PracticeController: UIViewController {
                 currentKey = theDeck.unseenCards.dequeue()
             }
             
-            frontLabel.text = currentKey as? String
-            backLabel.text = theDeck.get(front: currentKey!) as? String
+            let frontText = currentKey?.theContent
+            let backText = theDeck.get(front: currentKey!)!.theContent
+            
+            frontLabel.text = frontText
+            backLabel.text = backText
             backLabel.isHidden = true
             
             wrongButton.isEnabled = false

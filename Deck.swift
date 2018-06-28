@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Deck<Front: Hashable,Back> {
+class Deck<Front: Card<String>,Back: Card<String>> {
     var theDeck: Dictionary<Front, Back>
     var name: String
     var theSchedule: Dictionary<Front, Int>
@@ -47,7 +47,7 @@ class Deck<Front: Hashable,Back> {
         print("loading...")
         for (key, _) in theDeck {
             unseenCards.enqueue(key)
-            print("unseenCardsSize: " + String(unseenCards.size()) + " for " + (key as? String)!)
+            print("unseenCardsSize: " + String(unseenCards.size()) + " for " + key.theContent)
         }
     }
     
